@@ -10,7 +10,7 @@ Background:
 
 
 Scenario Outline: No_Profanity_Replaced_With_String
-    When I receive an incomming message of <text>
+    When I receive an incomming text of <text>
     And I process the content
     Then the <text> remains unchanged
 
@@ -23,7 +23,7 @@ Examples:
 Scenario Outline: Profanity_Replaced_With_String
 	When I receive an incomming text of <text>
     And I process the content
-    Then the <replacementString> is added
+    Then the string of <replacementString> is added
 
 Examples:
     | replacementString     | text        |

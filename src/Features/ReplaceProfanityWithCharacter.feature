@@ -27,5 +27,5 @@ Scenario Outline: Profanity_Replaced_With_Character
 
 Examples:
     | replacementCharacter  | text        |
-    | flowers               | fuck off    |
-    | chocolates            | badger twat |
+    | []                    | fuck off    |
+    | ()                    | badger twat |
