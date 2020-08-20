@@ -54,6 +54,18 @@ namespace StepDefinitions
         public void ThenReplacedWithTheCorrespondingAmountOfAsterisks()
         {
 
-        }                
+        }
+
+        [Then(@"profanitys are found")]
+        public void ThenProfanitysAreFound()
+        {
+
+        }
+
+        [Then(@"no profanitys are found")]
+        public void ThenNoProfanitysAreFound()
+        {
+
+        }                                
     }
 }

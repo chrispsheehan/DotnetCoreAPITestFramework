@@ -8,7 +8,7 @@ Background:
     Given The profanity removing API is available
 
 
-Scenario Outline: No_Profanity_Found
+Scenario Outline: No_Profanity_Removed
 	When I receive an incomming text of <text>
     And run it through the profanity API
     Then no profanitys are removed
@@ -20,7 +20,7 @@ Examples:
 | hallow you    | 
 
 
-Scenario Outline: Profanity_Found
+Scenario Outline: Profanity_Removed
 	When I receive an incomming text of <text>
     And run it through the profanity API
     Then profanitys are removed
