@@ -15,9 +15,9 @@ Scenario Outline: No_Profanity_Found
     And no asterisks are added 
 
 Examples:
-| text      |
-| hallow    |     
-
+| text          |
+| hallow        |     
+| hallow you    | 
 
 
 Scenario Outline: Profanity_Found
@@ -29,3 +29,4 @@ Scenario Outline: Profanity_Found
 Examples:
 | text      |
 | fuck      |  
+| fuck off  | 

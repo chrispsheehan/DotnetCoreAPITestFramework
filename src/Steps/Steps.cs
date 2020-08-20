@@ -19,8 +19,8 @@ namespace StepDefinitions
 
         }
         
-        [When(@"I receive an incomming text of hallow")]
-        public void WhenIReceiveAnIncommingTextOfHallow()
+        [When(@"I receive an incomming text of (.*)")]
+        public void WhenIReceiveAnIncommingTextOf(string text)
         {
 
         }
@@ -39,12 +39,6 @@ namespace StepDefinitions
         
         [Then(@"no asterisks are added")]
         public void ThenNoAsterisksAreAdded()
-        {
-
-        }
-
-        [When(@"I receive an incomming text of fuck")]
-        public void WhenIReceiveAnIncommingTextOfFuck()
         {
 
         }
