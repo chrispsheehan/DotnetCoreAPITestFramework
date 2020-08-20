@@ -26,7 +26,7 @@ namespace Drivers
             };
         }
 
-        private bool RemoteFileExists(string url)
+        public bool IsAPIAvailable()
         {
             try
             {
