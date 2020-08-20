@@ -11,8 +11,7 @@ Background:
 Scenario Outline: No_Profanity_Removed
 	When I receive an incomming text of <text>
     And run it through the profanity API
-    Then no profanitys are removed
-    And no asterisks are added 
+    Then no asterisks are added 
 
 Examples:
 | text          |
@@ -23,8 +22,7 @@ Examples:
 Scenario Outline: Profanity_Removed
 	When I receive an incomming text of <text>
     And run it through the profanity API
-    Then profanitys are removed
-    And replaced with the corresponding amount of asterisks
+    Then replaced with the corresponding amount of asterisks
 
 Examples:
 | text      |
