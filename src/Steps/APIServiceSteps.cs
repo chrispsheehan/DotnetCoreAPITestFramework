@@ -7,9 +7,9 @@ namespace StepDefinitions
     [Binding]
     public class APIServiceSteps
     {
-        private readonly Driver _driver;
+        private readonly APIDriver _driver;
 
-        public APIServiceSteps(Driver driver)
+        public APIServiceSteps(APIDriver driver)
         {
             _driver = driver;
         }
