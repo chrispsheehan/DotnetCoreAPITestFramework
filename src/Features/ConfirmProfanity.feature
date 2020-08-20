@@ -6,11 +6,12 @@ Feature: Find_Profanity
 
 Background:
     Given The profanity removing API is available
+    And I am using the contains profanity service
 
 
 Scenario Outline: No_Profanity_Found
 	When I receive an incomming text of <text>
-    And run it through the profanity API
+    And I process the content
     Then no profanitys are found
 
 Examples:
@@ -21,7 +22,7 @@ Examples:
 
 Scenario Outline: Profanity_Found
 	When I receive an incomming text of <text>
-    And run it through the profanity API
+    And I process the content
     Then profanitys are found
 
 Examples:
