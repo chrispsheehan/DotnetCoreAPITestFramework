@@ -1,10 +1,10 @@
 using System;
 using TechTalk.SpecFlow;
 
-namespace src.Hooks
+namespace Hooks
 {
     [Binding]
-    public class Hooks
+    public class Hook
     {
         
     }

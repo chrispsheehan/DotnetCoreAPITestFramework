@@ -1,7 +1,8 @@
 using TechTalk.SpecFlow;
-using src.Drivers;
+using Drivers;
+using System;
 
-namespace src.StepDefinitions
+namespace StepDefinitions
 {
     [Binding]
     public class Steps
@@ -12,23 +13,6 @@ namespace src.StepDefinitions
         {
             _driver = driver;
         }
-
-        [Given(@"Put your Background here")]
-        public void GivenPutYourBackgroundHere()
-        {
-            _driver.CreateBackground();
-        }
-
-        [When(@"Put your Action here")]
-        public void WhenPutYourActionHere()
-        {
-            _driver.ExecuteAction();
-        }
-
-        [Then(@"Put your Condition here")]
-        public void ThenPutYourConditionHere()
-        {
-            _driver.CheckCondition();
-        }
+                               
     }
 }
