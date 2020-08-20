@@ -1,7 +1,7 @@
 using TechTalk.SpecFlow;
-using src.Drivers;
+using Drivers;
 
-namespace src.StepDefinitions
+namespace StepDefinitions
 {
     [Binding]
     public class Steps
