@@ -1,5 +1,6 @@
 using TechTalk.SpecFlow;
 using Drivers;
+using System;
 
 namespace StepDefinitions
 {
@@ -22,7 +23,7 @@ namespace StepDefinitions
         [When(@"I receive an incomming text of (.*)")]
         public void WhenIReceiveAnIncommingTextOf(string text)
         {
-
+            Console.WriteLine(text);
         }
         
         [When(@"run it through the profanity API")]
