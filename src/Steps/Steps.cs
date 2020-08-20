@@ -13,22 +13,52 @@ namespace src.StepDefinitions
             _driver = driver;
         }
 
-        [Given(@"Put your Background here")]
-        public void GivenPutYourBackgroundHere()
+        [Given(@"The profanity removing API is available")]
+        public void GivenTheProfanityRemovingAPIIsAvailable()
         {
-            _driver.CreateBackground();
+
+        }
+        
+        [When(@"I receive an incomming text of hallow")]
+        public void WhenIReceiveAnIncommingTextOfHallow()
+        {
+
+        }
+        
+        [When(@"run it through the profanity API")]
+        public void WhenRunItThroughTheProfanityAPI()
+        {
+
+        }
+        
+        [Then(@"no profanitys are removed")]
+        public void ThenNoProfanitysAreRemoved()
+        {
+
+        }
+        
+        [Then(@"no asterisks are added")]
+        public void ThenNoAsterisksAreAdded()
+        {
+
         }
 
-        [When(@"Put your Action here")]
-        public void WhenPutYourActionHere()
+        [When(@"I receive an incomming text of fuck")]
+        public void WhenIReceiveAnIncommingTextOfFuck()
         {
-            _driver.ExecuteAction();
-        }
 
-        [Then(@"Put your Condition here")]
-        public void ThenPutYourConditionHere()
-        {
-            _driver.CheckCondition();
         }
+        
+        [Then(@"profanitys are removed")]
+        public void ThenProfanitysAreRemoved()
+        {
+
+        }
+        
+        [Then(@"replaced with the corresponding amount of asterisks")]
+        public void ThenReplacedWithTheCorrespondingAmountOfAsterisks()
+        {
+
+        }                
     }
 }
