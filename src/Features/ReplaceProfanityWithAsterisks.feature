@@ -1,4 +1,4 @@
-Feature: Remove_Profanity
+Feature: Remove_Profanity_With_Asterisks
 	As a person who is a little bit delicate
     I would like to have words of profanity hidden from incomming text
     So that I can get on with my life without fainting
@@ -6,11 +6,12 @@ Feature: Remove_Profanity
 
 Background:
     Given The profanity removing API is available
+    And I am using the profanity character replacement service    
 
 
 Scenario Outline: No_Profanity_Removed
 	When I receive an incomming text of <text>
-    And run it through the profanity API
+    And I process the content
     Then no asterisks are added 
 
 Examples:
@@ -21,7 +22,7 @@ Examples:
 
 Scenario Outline: Profanity_Removed
 	When I receive an incomming text of <text>
-    And run it through the profanity API
+    And I process the content
     Then replaced with the corresponding amount of asterisks
 
 Examples:
