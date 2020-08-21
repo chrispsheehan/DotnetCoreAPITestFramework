@@ -28,13 +28,16 @@ namespace Drivers
 
         public bool IsAPIAvailable()
         {
+            HttpWebResponse response;
+
             try
             {
                 HttpWebRequest request = WebRequest.Create(_client.BaseUrl) as HttpWebRequest;
                 request.Method = "HEAD";
-                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+                response = request.GetResponse() as HttpWebResponse;
+                bool result = response.StatusCode == HttpStatusCode.OK;
                 response.Close();
-                return response.StatusCode == HttpStatusCode.OK;
+                return result;
             }
             catch
             {
