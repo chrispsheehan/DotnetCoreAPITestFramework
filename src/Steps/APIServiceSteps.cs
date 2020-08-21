@@ -1,6 +1,7 @@
 using TechTalk.SpecFlow;
 using Drivers;
 using System;
+using Xunit;
 
 namespace StepDefinitions
 {
@@ -17,25 +18,27 @@ namespace StepDefinitions
         [Given(@"The profanity removing API is available")]
         public void GivenTheProfanityRemovingAPIIsAvailable()
         {
+            var isAvailable = _driver.IsAPIAvailable();
 
+            Assert.True(isAvailable);
         }
 
         [Given(@"I am using the contains profanity service")]
         public void GivenIAmUsingTheContainsProfanityService()
         {
-
+            _driver.SetService("");
         }
 
         [Given(@"I am using the profanity character replacement service")]
         public void GivenIAmUsingTheProfanityCharacterReplacementService()
         {
-
+            _driver.SetService("");
         }
 
         [Given(@"I am using the profanity string replacement service")]
         public void GivenIAmUsingTheProfanityStringReplacementService()
         {
-
+            _driver.SetService("");
         }
 
         [When(@"I process the content")]
