@@ -34,7 +34,7 @@ namespace Drivers
                 request.Method = "HEAD";
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
                 response.Close();
-                return (response.StatusCode == HttpStatusCode.OK);
+                return response.StatusCode == HttpStatusCode.OK;
             }
             catch
             {
