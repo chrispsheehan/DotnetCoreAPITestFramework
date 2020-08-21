@@ -1,4 +1,3 @@
-using System;
 using TechTalk.SpecFlow;
 using BoDi;
 using Drivers;
@@ -12,12 +11,6 @@ namespace Hooks
         public void BeforeScenario(IObjectContainer objectContainer)
         {
             objectContainer.RegisterInstanceAs(new APIDriver());
-        }
-
-        [AfterScenario]
-        public void AfterScenario()
-        {
-
         }
     }
 }
