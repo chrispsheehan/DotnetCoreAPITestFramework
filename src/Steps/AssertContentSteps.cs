@@ -7,9 +7,9 @@ namespace StepDefinitions
     [Binding]
     public class AssertContentSteps
     {
-        private readonly Driver _driver;
+        private readonly APIDriver _driver;
 
-        public AssertContentSteps(Driver driver)
+        public AssertContentSteps(APIDriver driver)
         {
             _driver = driver;
         }
