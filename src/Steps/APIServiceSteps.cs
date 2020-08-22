@@ -46,7 +46,7 @@ namespace StepDefinitions
         [When(@"I process the content")]
         public void WhenIProcessTheContent()
         {
-            bool hasProcessed = _driver.Process(_text);
+            bool hasProcessed = _driver.ProcessText(_text);
 
             Assert.True(hasProcessed);
         }

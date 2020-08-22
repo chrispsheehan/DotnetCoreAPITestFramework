@@ -20,7 +20,7 @@ namespace Drivers
             };
         }
 
-        public bool Process(string text)
+        public bool ProcessText(string text)
         {
             _request.Parameters.Add(new Parameter("text", text, ParameterType.QueryString));
             _response = _client.Execute(_request);
