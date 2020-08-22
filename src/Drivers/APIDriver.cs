@@ -1,5 +1,6 @@
 using System;
 using RestSharp;
+using RestSharp.Serialization.Json;
 
 namespace Drivers
 {
@@ -52,6 +53,17 @@ namespace Drivers
                 Method = Method.HEAD
             };
             return _client.Execute(_request).IsSuccessful;
+        }
+
+        public bool GetResultBool()
+        {
+            return bool.Parse(_response.Content);
+        }
+
+        public string GetResult()
+        {
+            var deserializer = new JsonDeserializer();
+            return deserializer.Deserialize<APIResponse>(_response).Result;
         }
     }
 }
