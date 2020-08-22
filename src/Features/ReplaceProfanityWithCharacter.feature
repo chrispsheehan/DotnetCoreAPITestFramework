@@ -6,26 +6,27 @@ Feature: Replace_Profanity_With_Character
 
 Background:
     Given The profanity removing API is available
-    And I am using the profanity character replacement service
 
 
 Scenario Outline: No_Profanity_Replaced_With_Character
+    Given I am using the profanity character replacement service with <replacementCharacter>
 	When I receive an incomming text of <text>
     And I process the content
     Then the <text> remains unchanged
 
 Examples:
-    | text              |
-    | you're nice       | 
-    | badger mushroom   |
+    | replacementCharacter  | text              |
+    | _                     | you're nice       | 
+    | ~                     | badger mushroom   |
 
 
 Scenario Outline: Profanity_Replaced_With_Character
+    Given I am using the profanity character replacement service with <replacementCharacter>
 	When I receive an incomming text of <text>
     And I process the content
     Then replaced profanity with the corresponding amount of <replacementCharacter>    
 
 Examples:
     | replacementCharacter  | text        |
-    | []                    | fuck off    |
-    | ()                    | badger twat |
+    | -                     | fuck off    |
+    | =                     | badger twat |

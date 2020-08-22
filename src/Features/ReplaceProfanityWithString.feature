@@ -6,18 +6,18 @@ Feature: Replace_Profanity_With_String
 
 Background:
     Given The profanity removing API is available
-    And I am using the profanity string replacement service
 
 
 Scenario Outline: No_Profanity_Replaced_With_String
+    Given I am using the profanity string replacement service with <replacementString>
     When I receive an incomming text of <text>
     And I process the content
     Then the <text> remains unchanged
 
 Examples:
-    | text              |
-    | you're nice       |  
-    | badger mushroom   |
+    | replacementString     | text              |
+    | lovelyness            | you're nice       |  
+    | warm hugs             | badger mushroom   |
 
 
 Scenario Outline: Profanity_Replaced_With_String

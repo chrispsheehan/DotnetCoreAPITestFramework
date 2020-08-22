@@ -41,6 +41,11 @@ namespace Drivers
             }
         }
 
+        public void AddParam(string parmaName, string paramValue)
+        {
+            _request.Parameters.Add(new Parameter(parmaName, paramValue, ParameterType.QueryString));
+        }
+
         public bool IsUrlAvailable()
         {
             _request = new RestRequest
