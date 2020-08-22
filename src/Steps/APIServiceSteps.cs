@@ -20,7 +20,7 @@ namespace StepDefinitions
         [Given(@"The profanity removing API is available")]
         public void GivenTheProfanityRemovingAPIIsAvailable()
         {
-            var isAvailable = _driver.IsAPIAvailable();
+            var isAvailable = _driver.IsUrlAvailable();
 
             Assert.True(isAvailable);
         }

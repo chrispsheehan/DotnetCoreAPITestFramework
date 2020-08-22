@@ -43,21 +43,11 @@ namespace Drivers
 
         public bool IsUrlAvailable()
         {
-            HttpWebResponse response;
-
-            try
+            _request = new RestRequest
             {
-                HttpWebRequest request = WebRequest.Create(_client.BaseUrl) as HttpWebRequest;
-                request.Method = "HEAD";
-                response = request.GetResponse() as HttpWebResponse;
-                bool result = response.StatusCode == HttpStatusCode.OK;
-                response.Close();
-                return result;
-            }
-            catch
-            {
-                return false;
-            }
+                Method = Method.HEAD
+            };
+            return _client.Execute(_request).IsSuccessful;
         }
     }
 }
