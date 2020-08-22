@@ -10,6 +10,8 @@ namespace StepDefinitions
     {
         private readonly APIDriver _driver;
 
+        private string _text;
+
         public APIServiceSteps(APIDriver driver)
         {
             _driver = driver;
@@ -26,7 +28,7 @@ namespace StepDefinitions
         [Given(@"I am using the contains profanity service")]
         public void GivenIAmUsingTheContainsProfanityService()
         {
-            _driver.SetService("");
+            _driver.SetService("containsprofanity");
         }
 
         [Given(@"I am using the profanity character replacement service")]
@@ -44,13 +46,15 @@ namespace StepDefinitions
         [When(@"I process the content")]
         public void WhenIProcessTheContent()
         {
+            bool hasProcessed = _driver.Process(_text);
 
+            Assert.True(hasProcessed);
         }
 
         [When(@"I receive an incomming text of (.*)")]
         public void WhenIReceiveAnIncommingTextOf(string text)
         {
-            Console.WriteLine(text);
+            _text = text;
         }
     }
 }

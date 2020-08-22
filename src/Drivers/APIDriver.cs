@@ -6,27 +6,42 @@ namespace Drivers
 {
     public class APIDriver
     {
-        private readonly RestClient _client;
-
-        private RestRequest _restRequest;
+        private readonly IRestClient _client;
+        private IRestResponse _response;
+        private IRestRequest _request;
 
         public APIDriver()
         {
             _client = new RestClient
             {
+                RemoteCertificateValidationCallback = (____, ___, __, _) => true,
+
                 BaseUrl = new Uri("https://www.purgomalum.com")
             };
         }
 
-        public void SetService(string serviceName)
+        public bool Process(string text)
         {
-            _restRequest = new RestRequest
-            {
-                Resource = $"Service/{serviceName}"
-            };
+            _request.Parameters.Add(new Parameter("text", text, ParameterType.QueryString));
+            _response = _client.Execute(_request);
+            return _response.IsSuccessful;
         }
 
-        public bool IsAPIAvailable()
+        public void SetService(string serviceName)
+        {
+            _request = new RestRequest
+            {
+                Resource = $"/service/{serviceName}",
+                Method = Method.GET
+            };
+
+            if (string.Equals(serviceName, "containsprofanity", StringComparison.OrdinalIgnoreCase))
+            {
+                _request.AddHeader("Accept", "text/plain");
+            }
+        }
+
+        public bool IsUrlAvailable()
         {
             HttpWebResponse response;
 
