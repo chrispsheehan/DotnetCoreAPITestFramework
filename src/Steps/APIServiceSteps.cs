@@ -1,6 +1,5 @@
 using TechTalk.SpecFlow;
 using Drivers;
-using System;
 using Xunit;
 
 namespace StepDefinitions
@@ -34,13 +33,23 @@ namespace StepDefinitions
         [Given(@"I am using the profanity character replacement service")]
         public void GivenIAmUsingTheProfanityCharacterReplacementService()
         {
-            _driver.SetService("");
+            _driver.SetService("json");
         }
 
-        [Given(@"I am using the profanity string replacement service")]
-        public void GivenIAmUsingTheProfanityStringReplacementService()
+        [Given(@"I am using the profanity character replacement service with (.*)")]
+        public void GivenIAmUsingTheProfanityCharacterReplacementServiceWith(string replacementCharacter)
         {
-            _driver.SetService("");
+            _driver.SetService("json");
+
+            _driver.AddParam("fill_char", replacementCharacter);
+        }
+
+        [Given(@"I am using the profanity string replacement service with (.*)")]
+        public void GivenIAmUsingTheProfanityStringReplacementServiceWith(string replacementString)
+        {
+            _driver.SetService("json");
+
+            _driver.AddParam("fill_text", replacementString);
         }
 
         [When(@"I process the content")]

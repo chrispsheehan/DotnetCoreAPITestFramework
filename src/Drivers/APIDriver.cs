@@ -1,6 +1,6 @@
 using System;
-using System.Net;
 using RestSharp;
+using RestSharp.Serialization.Json;
 
 namespace Drivers
 {
@@ -41,6 +41,11 @@ namespace Drivers
             }
         }
 
+        public void AddParam(string parmaName, string paramValue)
+        {
+            _request.Parameters.Add(new Parameter(parmaName, paramValue, ParameterType.QueryString));
+        }
+
         public bool IsUrlAvailable()
         {
             _request = new RestRequest
@@ -48,6 +53,17 @@ namespace Drivers
                 Method = Method.HEAD
             };
             return _client.Execute(_request).IsSuccessful;
+        }
+
+        public bool GetResultBool()
+        {
+            return bool.Parse(_response.Content);
+        }
+
+        public string GetResult()
+        {
+            var deserializer = new JsonDeserializer();
+            return deserializer.Deserialize<APIResponse>(_response).Result;
         }
     }
 }
