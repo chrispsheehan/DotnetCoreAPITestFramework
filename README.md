@@ -25,7 +25,6 @@ This is a test automation framework written against it.
 
 ```
 cd src
-dotnet build
 dotnet test
 ```
 
@@ -56,14 +55,14 @@ Total tests: 16
  Total time: 4.1265 Seconds
  ```
 
-### Trouble shooting
+### Troubleshooting
 
 ###### Mac MSBuild error
-- Issue: The below error when building the project.
-```
-.nuget/packages/specflow.tools.msbuild.generation/3.1.80/build/SpecFlow.Tools.MsBuild.Generation.targets(93,5): error MSB4018: The "GenerateFeatureFileCodeBehindTask" task failed unexpectedly.
-```
-- Fix: Run the below in Terminal.
-```
+- Issue: The below error when building the project
+ ```
+error MSB4018: The "GenerateFeatureFileCodeBehindTask" task failed unexpectedly.
+ ```
+- Fix: Run the below in Terminal
+ ```
 export MSBUILDSINGLELOADCONTEXT=1
-```
+ ```
