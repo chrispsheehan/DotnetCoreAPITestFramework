@@ -9,7 +9,6 @@ namespace Drivers
         private readonly IRestClient _client;
         private IRestResponse _response;
         private IRestRequest _request;
-        private const string defaultDataType = "json";
 
         public APIDriver()
         {
@@ -17,13 +16,13 @@ namespace Drivers
             {
                 RemoteCertificateValidationCallback = (____, ___, __, _) => true,
 
-                BaseUrl = new Uri("https://www.purgomalum.com")
+                BaseUrl = new Uri(APIConstants.APIBaseUrl)
             };
         }
 
         public bool ProcessText(string text)
         {
-            _request.Parameters.Add(new Parameter("text", text, ParameterType.QueryString));
+            _request.Parameters.Add(new Parameter(APIConstants.TextProcessParam, text, ParameterType.QueryString));
             _response = _client.Execute(_request);
             return _response.IsSuccessful;
         }
@@ -32,35 +31,35 @@ namespace Drivers
         {
             _request = new RestRequest
             {
-                Resource = $"/service/{serviceName}",
+                Resource = $"/{APIConstants.Endpoint}/{serviceName}",
                 Method = Method.GET
             };
         }
 
         public void SetContainsProfanityService()
         {
-            SetService("containsprofanity");
+            SetService(APIConstants.ContainsProfanityService);
 
             _request.AddHeader("Accept", "text/plain");
         }
 
         public void SetDefaultService()
         {
-            SetService(defaultDataType);
+            SetService(APIConstants.DefaultDataType);
         }
 
         public void SetCharacterReplacementService(string replacementCharacter)
         {
             SetDefaultService();
 
-            AddParam("fill_char", replacementCharacter);
+            AddParam(APIConstants.ReplaceCharacterService, replacementCharacter);
         }
 
         public void SetStringReplacementService(string replacementString)
         {
             SetDefaultService();
 
-            AddParam("fill_text", replacementString);
+            AddParam(APIConstants.ReplaceStringService, replacementString);
         }
 
         private void AddParam(string parmaName, string paramValue)
