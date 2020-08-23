@@ -15,12 +15,13 @@ This is a automation test framework written against it.
 - [Clone this repositiry to your machine](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 
+### Run tests
 #### Open Terminal/CMD
 - Mac: [Open the Terminal app](https://www.howtogeek.com/682770/how-to-open-the-terminal-on-a-mac/) and [navigate to the repository folder](https://www.macworld.com/article/2042378/master-the-command-line-navigating-files-and-folders.html)
 - Windows: [Open command prompt in repository folder](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/)
 - Execute the below commands
 
-#### Run tests on your machine OR
+#### Run the tests on your machine OR...
 
 ```
 cd src
@@ -29,7 +30,7 @@ dotnet test
 ```
 
 
-#### Run tests in [Docker](https://www.docker.com/)
+#### ...in [Docker](https://www.docker.com/)
 
 ```
 docker build -t test-box .
@@ -55,7 +56,7 @@ Total tests: 16
  Total time: 4.1265 Seconds
  ```
 
-#### Trouble shooting
+### Trouble shooting
 
 ###### Mac MSBuild error
 - Issue: The below error when building the project.
