@@ -14,7 +14,7 @@
 ```dotnet build```
 
 ##### Run it
-```docker test```
+```dotnet test```
 
 
 ### Run tests in [Docker](https://www.docker.com/)
