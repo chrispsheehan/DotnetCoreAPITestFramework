@@ -2,7 +2,7 @@
 
 [Purgomalum](https://www.purgomalum.com/) is a simple, free RESTful web service for filtering and removing content of profanity, obscenity and other unwanted text.
 
-This is a automation test framework written against it.
+This is a test automation framework written against it.
 
 ##### Resources
 - [SpecFlow Project Template with dotnet new](https://specflow.org/blog/specflow-project-template-with-dotnet-new/)
