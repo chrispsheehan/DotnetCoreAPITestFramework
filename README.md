@@ -20,22 +20,40 @@ This is a automation test framework written against it.
 - Windows: [Open command prompt in repository folder](https://helpdeskgeek.com/how-to/open-command-prompt-folder-windows-explorer/)
 - Execute the below commands
 
-### Run tests on your machine
+#### Run tests on your machine OR
 
 ```
 cd src
 dotnet build
-dotnet run
+dotnet test
 ```
 
 
-### Run tests in [Docker](https://www.docker.com/)
+#### Run tests in [Docker](https://www.docker.com/)
 
 ```
 docker build -t test-box .
 docker run test-box
 ```
 
+#### Expected output
+```
+-> Using default config
+Test run for /APITestFramework/src/bin/Debug/netcoreapp3.1/APITestFramwwork.dll(.NETCoreApp,Version=v3.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.6.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+A total of 1 test files matched the specified pattern.
+-> Loading plugin /APITestFramework/src/bin/Debug/netcoreapp3.1/TechTalk.SpecFlow.xUnit.SpecFlowPlugin.dll
+-> Using default config
+
+Test Run Successful.
+Total tests: 16
+     Passed: 16
+ Total time: 4.1265 Seconds
+ ```
 
 #### Trouble shooting
 
