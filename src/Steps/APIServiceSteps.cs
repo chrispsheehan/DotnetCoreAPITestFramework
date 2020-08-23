@@ -27,29 +27,25 @@ namespace StepDefinitions
         [Given(@"I am using the contains profanity service")]
         public void GivenIAmUsingTheContainsProfanityService()
         {
-            _driver.SetService("containsprofanity");
+            _driver.SetContainsProfanityService();
         }
 
         [Given(@"I am using the profanity character replacement service")]
         public void GivenIAmUsingTheProfanityCharacterReplacementService()
         {
-            _driver.SetService("json");
+            _driver.SetDefaultService();
         }
 
         [Given(@"I am using the profanity character replacement service with (.*)")]
         public void GivenIAmUsingTheProfanityCharacterReplacementServiceWith(string replacementCharacter)
         {
-            _driver.SetService("json");
-
-            _driver.AddParam("fill_char", replacementCharacter);
+            _driver.SetCharacterReplacementService(replacementCharacter);
         }
 
         [Given(@"I am using the profanity string replacement service with (.*)")]
         public void GivenIAmUsingTheProfanityStringReplacementServiceWith(string replacementString)
         {
-            _driver.SetService("json");
-
-            _driver.AddParam("fill_text", replacementString);
+            _driver.SetStringReplacementService(replacementString);
         }
 
         [When(@"I process the content")]
