@@ -9,6 +9,7 @@ namespace Drivers
         private readonly IRestClient _client;
         private IRestResponse _response;
         private IRestRequest _request;
+        private const string defaultDataType = "json";
 
         public APIDriver()
         {
@@ -27,21 +28,42 @@ namespace Drivers
             return _response.IsSuccessful;
         }
 
-        public void SetService(string serviceName)
+        private void SetService(string serviceName)
         {
             _request = new RestRequest
             {
                 Resource = $"/service/{serviceName}",
                 Method = Method.GET
             };
-
-            if (string.Equals(serviceName, "containsprofanity", StringComparison.OrdinalIgnoreCase))
-            {
-                _request.AddHeader("Accept", "text/plain");
-            }
         }
 
-        public void AddParam(string parmaName, string paramValue)
+        public void SetContainsProfanityService()
+        {
+            SetService("containsprofanity");
+
+            _request.AddHeader("Accept", "text/plain");
+        }
+
+        public void SetDefaultService()
+        {
+            SetService(defaultDataType);
+        }
+
+        public void SetCharacterReplacementService(string replacementCharacter)
+        {
+            SetDefaultService();
+
+            AddParam("fill_char", replacementCharacter);
+        }
+
+        public void SetStringReplacementService(string replacementString)
+        {
+            SetDefaultService();
+
+            AddParam("fill_text", replacementString);
+        }
+
+        private void AddParam(string parmaName, string paramValue)
         {
             _request.Parameters.Add(new Parameter(parmaName, paramValue, ParameterType.QueryString));
         }
