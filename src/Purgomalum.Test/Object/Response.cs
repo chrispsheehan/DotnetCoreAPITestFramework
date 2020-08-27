@@ -1,6 +1,6 @@
-namespace Drivers
+namespace Object
 {
-    public class APIResponse
+    public class Response
     {
         public string Result { get; set; }
     }

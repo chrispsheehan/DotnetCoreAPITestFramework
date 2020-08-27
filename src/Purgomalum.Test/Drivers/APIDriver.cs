@@ -1,4 +1,5 @@
 using System;
+using Object;
 using RestSharp;
 using RestSharp.Serialization.Json;
 
@@ -84,7 +85,7 @@ namespace Drivers
         public string GetResult()
         {
             var deserializer = new JsonDeserializer();
-            return deserializer.Deserialize<APIResponse>(_response).Result;
+            return deserializer.Deserialize<Response>(_response).Result;
         }
     }
 }
