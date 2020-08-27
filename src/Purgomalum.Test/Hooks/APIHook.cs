@@ -10,7 +10,7 @@ namespace Hooks
         [BeforeScenario]
         public void BeforeScenario(IObjectContainer objectContainer)
         {
-            objectContainer.RegisterInstanceAs(new APIDriver());
+            objectContainer.RegisterInstanceAs(new PurgomalumAPI());
         }
     }
 }

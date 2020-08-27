@@ -7,11 +7,11 @@ namespace StepDefinitions
     [Binding]
     public class APIServiceSteps
     {
-        private readonly APIDriver _driver;
+        private readonly PurgomalumAPI _driver;
 
         private string _text;
 
-        public APIServiceSteps(APIDriver driver)
+        public APIServiceSteps(PurgomalumAPI driver)
         {
             _driver = driver;
         }
