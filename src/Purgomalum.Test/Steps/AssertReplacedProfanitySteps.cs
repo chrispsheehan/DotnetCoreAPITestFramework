@@ -5,19 +5,19 @@ using Xunit;
 namespace StepDefinitions
 {
     [Binding]
-    public class AssertContentSteps
+    public class AssertReplacedProfanitySteps
     {
-        private readonly PurgomalumAPI _driver;
+        private readonly PurgomalumReplaceAPI _purgomalumReplaceAPI;
 
-        public AssertContentSteps(PurgomalumAPI driver)
+        public AssertReplacedProfanitySteps(PurgomalumReplaceAPI purgomalumReplaceAPI)
         {
-            _driver = driver;
+            _purgomalumReplaceAPI = purgomalumReplaceAPI;
         }
 
         [Then(@"no asterisks are added")]
         public void ThenNoAsterisksAreAdded()
         {
-            string actual = _driver.GetResult();
+            string actual = _purgomalumReplaceAPI.GetProcessedText();;
 
             const string expectedContains = "*";
 
@@ -27,17 +27,17 @@ namespace StepDefinitions
         [Then(@"replaced with the corresponding amount of asterisks")]
         public void ThenReplacedWithTheCorrespondingAmountOfAsterisks()
         {
-            string actual = _driver.GetResult();
+            string actual = _purgomalumReplaceAPI.GetProcessedText();
 
             const string expectedContains = "*";
 
             Assert.Contains(expectedContains, actual);
-        }        
+        }
 
         [Then(@"replaced profanity with the corresponding amount of (.*)")]
         public void ThenReplacedProfanityWithTheCorrespondingAmountOf(string character)
         {
-            string actual = _driver.GetResult();
+            string actual = _purgomalumReplaceAPI.GetProcessedText();
 
             string expectedContains = character;
 
@@ -47,7 +47,7 @@ namespace StepDefinitions
         [Then(@"the string of (.*) is added")]
         public void ThenTheStringOfIsAdded(string replacementString)
         {
-            string actual = _driver.GetResult();
+            string actual = _purgomalumReplaceAPI.GetProcessedText();
 
             string expectedContains = replacementString;
 
@@ -57,27 +57,11 @@ namespace StepDefinitions
         [Then(@"the (.*) remains unchanged")]
         public void ThenTheTextRemainsUnchanged(string text)
         {
-            string actual = _driver.GetResult();
+            string actual = _purgomalumReplaceAPI.GetProcessedText();
 
             string expected = text;
 
             Assert.Equal(expected, actual);
-        }        
-
-        [Then(@"profanitys are found")]
-        public void ThenProfanitysAreFound()
-        {
-            bool actual = _driver.GetResultBool();
-
-            Assert.True(actual);
-        }
-
-        [Then(@"no profanitys are found")]
-        public void ThenNoProfanitysAreFound()
-        {
-            bool actual = _driver.GetResultBool();
-
-            Assert.False(actual);
         }
     }
 }
