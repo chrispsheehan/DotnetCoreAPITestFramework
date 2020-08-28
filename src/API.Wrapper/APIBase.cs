@@ -1,7 +1,7 @@
 using System;
 using RestSharp;
 
-namespace API
+namespace API.Wrapper
 {
     public class APIBase
     {
