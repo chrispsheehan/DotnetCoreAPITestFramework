@@ -1,7 +1,7 @@
 using System;
 using RestSharp;
 
-namespace Drivers
+namespace API
 {
     public class APIBase
     {
@@ -21,7 +21,7 @@ namespace Drivers
             _endPoint = endPoint;
         }
 
-        internal void SetService(string serviceName)
+        public void SetService(string serviceName)
         {
             _request = new RestRequest
             {
@@ -30,12 +30,12 @@ namespace Drivers
             };
         }
 
-        internal void SetHeaderToPlainText()
+        public void SetHeaderToPlainText()
         {
             _request.AddHeader("Accept", "text/plain");
         }
 
-        internal void AddQueryStringParam(string paramName, string paramValue)
+        public void AddQueryStringParam(string paramName, string paramValue)
         {
             _request.Parameters.Add(new Parameter(paramName, paramValue, ParameterType.QueryString));
         }
