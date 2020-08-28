@@ -1,6 +1,6 @@
 using Object;
 
-namespace Drivers
+namespace PurgomalumService
 {
     public class PurgomalumReplaceAPI
     {

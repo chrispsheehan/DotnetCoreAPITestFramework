@@ -1,7 +1,6 @@
 using TechTalk.SpecFlow;
-using Drivers;
-using Xunit;
 using Object;
+using PurgomalumService;
 
 namespace StepDefinitions
 {

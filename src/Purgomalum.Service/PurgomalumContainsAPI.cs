@@ -1,4 +1,4 @@
-namespace Drivers
+namespace PurgomalumService
 {
     public class PurgomalumContainsAPI
     {

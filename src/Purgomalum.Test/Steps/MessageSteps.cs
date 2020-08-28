@@ -1,6 +1,4 @@
 using TechTalk.SpecFlow;
-using Drivers;
-using Xunit;
 using Object;
 
 namespace StepDefinitions

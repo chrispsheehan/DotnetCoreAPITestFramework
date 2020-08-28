@@ -1,6 +1,6 @@
 using API;
 
-namespace Drivers
+namespace PurgomalumService
 {
     public class PurgomalumAPI : APIBase
     {
