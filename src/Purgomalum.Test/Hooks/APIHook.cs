@@ -1,6 +1,7 @@
 using TechTalk.SpecFlow;
 using BoDi;
-using Drivers;
+using Object;
+using PurgomalumService;
 
 namespace Hooks
 {
@@ -10,7 +11,9 @@ namespace Hooks
         [BeforeScenario]
         public void BeforeScenario(IObjectContainer objectContainer)
         {
-            objectContainer.RegisterInstanceAs(new APIDriver());
+            objectContainer.RegisterInstanceAs(new Message());
+
+            objectContainer.RegisterInstanceAs(new PurgomalumAPI(APIConstants.APIBaseUrl, APIConstants.Endpoint));
         }
     }
 }

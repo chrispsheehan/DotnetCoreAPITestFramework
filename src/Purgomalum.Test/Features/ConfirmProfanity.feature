@@ -11,7 +11,7 @@ Background:
 
 Scenario Outline: No_Profanity_Found
 	When I receive an incomming text of <text>
-    And I process the content
+    And I check the content for profanitys
     Then no profanitys are found
 
 Examples:
@@ -22,7 +22,7 @@ Examples:
 
 Scenario Outline: Profanity_Found
 	When I receive an incomming text of <text>
-    And I process the content
+    And I check the content for profanitys
     Then profanitys are found
 
 Examples:
