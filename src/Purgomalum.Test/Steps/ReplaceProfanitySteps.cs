@@ -1,6 +1,6 @@
 using TechTalk.SpecFlow;
 using Object;
-using PurgomalumService;
+using Purgomalum.Service;
 
 namespace StepDefinitions
 {
@@ -17,22 +17,10 @@ namespace StepDefinitions
             _purgomalumReplaceAPI = purgomalumReplaceAPI;
         }
 
-        [When(@"I process the content")] ///////////////////////////////////////////////////////////////
+        [When(@"I process the content")] 
         public void WhenIProcessTheContent()
         {
             _purgomalumReplaceAPI.ProcessText( _message.Text);
         }
-
-        [Given(@"I am using the profanity character replacement service with (.*)")]
-        public void GivenIAmUsingTheProfanityCharacterReplacementServiceWith(string replacementCharacter)
-        {
-            _purgomalumReplaceAPI.SetCharacterReplacementService(replacementCharacter);
-        }
-
-        [Given(@"I am using the profanity string replacement service with (.*)")]
-        public void GivenIAmUsingTheProfanityStringReplacementServiceWith(string replacementString)
-        {
-            _purgomalumReplaceAPI.SetStringReplacementService(replacementString);
-        }        
     }
 }

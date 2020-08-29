@@ -1,4 +1,4 @@
-namespace Purgomalum.Object
+namespace Purgomalum.Service.Object
 {
     public class ProcessedResponse
     {

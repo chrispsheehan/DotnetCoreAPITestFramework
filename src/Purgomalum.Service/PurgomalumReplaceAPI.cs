@@ -1,7 +1,6 @@
+using Purgomalum.Service.Object;
 
-using Purgomalum.Object;
-
-namespace PurgomalumService
+namespace Purgomalum.Service
 {
     public class PurgomalumReplaceAPI
     {
@@ -11,8 +10,6 @@ namespace PurgomalumService
         public PurgomalumReplaceAPI(PurgomalumAPI purgomalumAPI)
         {
             _purgomalumAPI = purgomalumAPI;
-
-            _purgomalumAPI.SetService(APIConstants.DefaultDataType);
         }
 
         public void ProcessText(string text)
@@ -25,16 +22,6 @@ namespace PurgomalumService
         public string GetProcessedText()
         {
             return _purgomalResponse.Result;
-        }
-
-        public void SetCharacterReplacementService(string replacementCharacter)
-        {
-            _purgomalumAPI.AddQueryStringParam(APIConstants.ReplaceCharacterService, replacementCharacter);
-        }
-
-        public void SetStringReplacementService(string replacementString)
-        {
-            _purgomalumAPI.AddQueryStringParam(APIConstants.ReplaceStringService, replacementString);
         }
     }
 }

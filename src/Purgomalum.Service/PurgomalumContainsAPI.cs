@@ -1,4 +1,4 @@
-namespace PurgomalumService
+namespace Purgomalum.Service
 {
     public class PurgomalumContainsAPI
     {
@@ -8,13 +8,6 @@ namespace PurgomalumService
         public PurgomalumContainsAPI(PurgomalumAPI purgomalumAPI)
         {
             _purgomalumAPI = purgomalumAPI;
-        }
-
-        public void SetContainsService()
-        {
-            _purgomalumAPI.SetService(APIConstants.ContainsProfanityService);
-
-            _purgomalumAPI.SetHeaderToPlainText();
         }
 
         public void ProcessText(string text)

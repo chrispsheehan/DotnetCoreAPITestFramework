@@ -6,6 +6,7 @@ Feature: Remove_Profanity_With_Asterisks
 
 Background:
     Given The profanity removing API is available
+    And I am using the profanity replacement service
 
 
 Scenario Outline: No_Profanity_Removed

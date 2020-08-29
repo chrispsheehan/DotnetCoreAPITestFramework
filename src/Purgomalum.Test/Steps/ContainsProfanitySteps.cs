@@ -1,6 +1,6 @@
 using TechTalk.SpecFlow;
 using Object;
-using PurgomalumService;
+using Purgomalum.Service;
 
 namespace StepDefinitions
 {
@@ -15,12 +15,6 @@ namespace StepDefinitions
             _message = message;
 
             _purgomalumContainsAPI = purgomalumContainsAPI;
-        }
-
-        [Given(@"I am using the contains profanity service")]
-        public void GivenIAmUsingTheContainsProfanityService()
-        {
-            _purgomalumContainsAPI.SetContainsService();
         }
 
         [When(@"I check the content for profanitys")]
