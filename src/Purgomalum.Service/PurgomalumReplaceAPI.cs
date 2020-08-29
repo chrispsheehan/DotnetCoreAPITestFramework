@@ -4,7 +4,7 @@ namespace PurgomalumService
 {
     public class PurgomalumReplaceAPI
     {
-        private Response _purgomalResponse;
+        private ProcessedResponse _purgomalResponse;
         private readonly PurgomalumAPI _purgomalumAPI;
 
         public PurgomalumReplaceAPI(PurgomalumAPI purgomalumAPI)
@@ -18,7 +18,7 @@ namespace PurgomalumService
         {
             _purgomalumAPI.SetTextToBeProcessed(text);
 
-            _purgomalResponse = _purgomalumAPI.ExecuteReturnType<Response>();
+            _purgomalResponse = _purgomalumAPI.ExecuteReturnType<ProcessedResponse>();
         }
 
         public string GetProcessedText()

@@ -1,6 +1,6 @@
 namespace Object
 {
-    public class Response
+    public class ProcessedResponse
     {
         public string Result { get; set; }
     }
