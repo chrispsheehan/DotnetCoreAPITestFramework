@@ -25,7 +25,7 @@ namespace StepDefinitions
         [Given(@"I am using the profanity replacement service")]
         public void GivenIAmUsingTheProfanityReplacementService()
         {
-            _purgomalumAPI.SetDefaultResourse();
+            _purgomalumAPI.SetDefaultService();
         }
 
         [Given(@"I am using the profanity character replacement service with (.*)")]

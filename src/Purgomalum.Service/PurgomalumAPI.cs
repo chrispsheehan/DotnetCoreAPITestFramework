@@ -17,7 +17,7 @@ namespace Purgomalum.Service
             AddQueryStringParam(_purgomalumSettings.TextProcessParam, text);
         }
 
-        public void SetDefaultResourse()
+        public void SetDefaultService()
         {
             SetService(_purgomalumSettings.DefaultDataType);
         }
@@ -31,14 +31,14 @@ namespace Purgomalum.Service
 
         public void SetCharacterReplacementService(string replacementCharacter)
         {
-            SetDefaultResourse();
+            SetDefaultService();
 
             AddQueryStringParam(_purgomalumSettings.ReplaceCharacterService, replacementCharacter);
         }
 
         public void SetStringReplacementService(string replacementString)
         {
-            SetDefaultResourse();
+            SetDefaultService();
 
             AddQueryStringParam(_purgomalumSettings.ReplaceStringService, replacementString);
         }
