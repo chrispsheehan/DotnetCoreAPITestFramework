@@ -1,4 +1,5 @@
-using Object;
+
+using Purgomalum.Object;
 
 namespace PurgomalumService
 {
