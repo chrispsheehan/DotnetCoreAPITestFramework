@@ -1,4 +1,4 @@
-using PurgomalumService;
+using Purgomalum.Service;
 using TechTalk.SpecFlow;
 using Xunit;
 
