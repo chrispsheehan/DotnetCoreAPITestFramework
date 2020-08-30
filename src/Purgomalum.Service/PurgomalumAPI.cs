@@ -20,7 +20,7 @@ namespace Purgomalum.Service
 
         public void SetTextToBeProcessed(string text)
         {
-            _log.Trace($"Using default {_purgomalumSettings.DefaultDataType} service");
+            _log.Trace($"Setting text '{text}' to be processed");
 
             AddQueryStringParam(_purgomalumSettings.TextProcessParam, text);
         }
