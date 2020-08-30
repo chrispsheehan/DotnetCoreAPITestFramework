@@ -78,7 +78,7 @@ namespace API.Wrapper
 
                 _log.Error(errorMsg);
 
-                throw new Exception(errorMsg));
+                throw new Exception(errorMsg);
             }
 
             return response.Content;
