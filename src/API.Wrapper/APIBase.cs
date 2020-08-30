@@ -1,16 +1,20 @@
 using System;
+using NLog;
 using RestSharp;
 
 namespace API.Wrapper
 {
     public class APIBase
     {
+        private readonly Logger _log;
         private readonly IRestClient _client;
         private readonly string _endPoint;
         private IRestRequest _request;
 
-        public APIBase(string aPIBaseUrl, string endPoint)
+        public APIBase(Logger log, string aPIBaseUrl, string endPoint)
         {
+            _log = log;
+
             _client = new RestClient
             {
                 RemoteCertificateValidationCallback = (____, ___, __, _) => true,
@@ -55,7 +59,11 @@ namespace API.Wrapper
 
             if (response.ErrorException != null)
             {
-                throw new Exception("Error retrieving response.  Check inner details for more info.", response.ErrorException);
+                const string errorMsg = "Error retrieving response.  Check inner details for more info.";
+
+                _log.Error($"{errorMsg} {response.ErrorException}");
+
+                throw new Exception(errorMsg, response.ErrorException);
             }
             return response.Data;
         }
@@ -66,7 +74,11 @@ namespace API.Wrapper
 
             if(string.IsNullOrEmpty(response.Content))
             {
-                throw new Exception("No content found in reponse");
+                const string errorMsg = "No content found in reponse";
+
+                _log.Error(errorMsg);
+
+                throw new Exception(errorMsg));
             }
 
             return response.Content;
