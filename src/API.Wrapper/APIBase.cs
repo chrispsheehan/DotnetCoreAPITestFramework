@@ -11,9 +11,9 @@ namespace API.Wrapper
         private readonly string _endPoint;
         private IRestRequest _request;
 
-        public APIBase(Logger log, string aPIBaseUrl, string endPoint)
+        public APIBase(string aPIBaseUrl, string endPoint)
         {
-            _log = log;
+            _log = LogManager.GetCurrentClassLogger();
 
             _client = new RestClient
             {
