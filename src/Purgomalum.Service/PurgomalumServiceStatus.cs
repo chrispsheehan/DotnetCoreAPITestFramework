@@ -1,5 +1,4 @@
 using API.Wrapper;
-using NLog;
 using Purgomulum.Settings;
 
 namespace Purgomalum.Service
@@ -9,7 +8,6 @@ namespace Purgomalum.Service
         public PurgomalumServiceStatus(PurgomalumSettings purgomalumSettings)
             : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
         {
-
         }
     }
 }

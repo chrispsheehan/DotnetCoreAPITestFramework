@@ -21,7 +21,7 @@ namespace API.Wrapper
                 Method = Method.HEAD
             };
 
-            return _client.Execute(_request).IsSuccessful);
+            return _client.Execute(_request).IsSuccessful;
         }
     }
 }
