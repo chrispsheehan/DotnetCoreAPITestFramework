@@ -57,7 +57,7 @@ Total tests: 16
 
 #### [Visual Studio Code](https://code.visualstudio.com/)
 
-Dotnet core test can be debugged and run from VS code.
+Dotnet core tests can be debugged and run from VS code.
 
 Required extensions:
 - [.Net Core Test Explorer](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer)
