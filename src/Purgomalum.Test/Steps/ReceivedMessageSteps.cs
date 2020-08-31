@@ -1,21 +1,27 @@
 using TechTalk.SpecFlow;
 using Object;
+using Purgomalum.Service;
 
 namespace StepDefinitions
 {
     [Binding]
-    public class MessageSteps
+    public class ReceivedMessageSteps
     {
         private readonly Message _message;
+        private readonly PurgomalumServiceBase _purgomalumServiceBase;
 
-        public MessageSteps(Message message)
+        public ReceivedMessageSteps(Message message, PurgomalumServiceBase purgomalumServiceBase)
         {
            _message = message;
+
+           _purgomalumServiceBase = purgomalumServiceBase;
         }
 
         [When(@"I receive an incomming text of (.*)")]
         public void WhenIReceiveAnIncommingTextOf(string text)
         {
+            _purgomalumServiceBase.SetTextToBeProcessed(text);
+
             _message.Text = text;
         }
     }

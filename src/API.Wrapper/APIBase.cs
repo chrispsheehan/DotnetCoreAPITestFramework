@@ -7,13 +7,13 @@ namespace API.Wrapper
     public class APIBase
     {
         private readonly Logger _log;
-        private readonly IRestClient _client;
+        internal readonly IRestClient _client;
         private readonly string _endPoint;
-        private IRestRequest _request;
+        internal IRestRequest _request;
 
-        public APIBase(Logger log, string aPIBaseUrl, string endPoint)
+        public APIBase(string aPIBaseUrl, string endPoint)
         {
-            _log = log;
+            _log = LogManager.GetCurrentClassLogger();
 
             _client = new RestClient
             {
@@ -34,38 +34,14 @@ namespace API.Wrapper
             };
         }
 
-        public void SetHeaderToPlainText()
-        {
-            _request.AddHeader("Accept", "text/plain");
-        }
-
         public void AddQueryStringParam(string paramName, string paramValue)
         {
             _request.Parameters.Add(new Parameter(paramName, paramValue, ParameterType.QueryString));
         }
 
-        public bool IsAvailable()
+        public void SetDataTypeHeader(string dataType)
         {
-            _request = new RestRequest
-            {
-                Method = Method.HEAD
-            };
-            return _client.Execute(_request).IsSuccessful;
-        }
-
-        public T ExecuteReturnType<T>() where T : new()
-        {
-            var response = _client.Execute<T>(_request);
-
-            if (response.ErrorException != null)
-            {
-                const string errorMsg = "Error retrieving response.  Check inner details for more info.";
-
-                _log.Error($"{errorMsg} {response.ErrorException}");
-
-                throw new Exception(errorMsg, response.ErrorException);
-            }
-            return response.Data;
+            _request.AddHeader("Accept", dataType);
         }
 
         public string ExecuteReturnContent()
@@ -82,6 +58,21 @@ namespace API.Wrapper
             }
 
             return response.Content;
-        }
+        } 
+
+        public T ExecuteReturnType<T>() where T : new()
+        {
+            var response = _client.Execute<T>(_request);
+
+            if (response.ErrorException != null)
+            {
+                const string errorMsg = "Error retrieving response.  Check inner details for more info.";
+
+                _log.Error($"{errorMsg} {response.ErrorException}");
+
+                throw new Exception(errorMsg, response.ErrorException);
+            }
+            return response.Data;
+        }        
     }
 }

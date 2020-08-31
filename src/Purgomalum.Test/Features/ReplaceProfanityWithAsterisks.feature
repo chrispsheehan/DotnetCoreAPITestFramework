@@ -11,7 +11,7 @@ Background:
 
 Scenario Outline: No_Profanity_Removed
 	When I receive an incomming text of <text>
-    And I process the content
+    And I replace profanitys in the content
     Then no asterisks are added 
 
 Examples:
@@ -22,7 +22,7 @@ Examples:
 
 Scenario Outline: Profanity_Removed
 	When I receive an incomming text of <text>
-    And I process the content
+    And I replace profanitys in the content
     Then replaced with the corresponding amount of asterisks
 
 Examples:
