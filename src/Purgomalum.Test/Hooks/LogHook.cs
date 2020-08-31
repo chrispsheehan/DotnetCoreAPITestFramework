@@ -5,14 +5,13 @@ using NLog;
 namespace Hooks
 {
     [Binding]
-    public class LogHooks
+    public class LogHook
     {
-        private const string nlogConfigPath = "nlog.config";
 
         [BeforeTestRun]
         public static void BeforeTestRun(IObjectContainer objectContainer)
         {
-            objectContainer.RegisterInstanceAs(LogManager.LoadConfiguration(nlogConfigPath).GetCurrentClassLogger());
+            objectContainer.RegisterInstanceAs(LogManager.GetCurrentClassLogger());
         }
 
         [BeforeFeature]
