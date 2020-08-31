@@ -13,15 +13,6 @@ namespace API.Wrapper
             _log = LogManager.GetCurrentClassLogger();
         }
 
-        public bool IsAvailable()
-        {
-            _request = new RestRequest
-            {
-                Method = Method.HEAD
-            };
-            return _client.Execute(_request).IsSuccessful;
-        }
-
         public T ExecuteReturnType<T>() where T : new()
         {
             var response = _client.Execute<T>(_request);

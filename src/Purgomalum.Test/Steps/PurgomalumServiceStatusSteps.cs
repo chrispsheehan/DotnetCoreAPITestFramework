@@ -7,17 +7,17 @@ namespace StepDefinitions
     [Binding]
     public class ProfanityServiceStatusSteps
     {
-        private readonly PurgomalumAPI _purgomalumAPI;
+        private readonly PurgomalumServiceStatus _purgomalumServiceStatus;
 
-        public ProfanityServiceStatusSteps(PurgomalumAPI purgomalumAPI)
+        public ProfanityServiceStatusSteps(PurgomalumServiceStatus purgomalumServiceStatus)
         {
-            _purgomalumAPI = purgomalumAPI;
+            _purgomalumServiceStatus = purgomalumServiceStatus;
         }
 
         [Given(@"The profanity removing API is available")]
         public void GivenTheProfanityRemovingAPIIsAvailable()
         {
-            var isAvailable = _purgomalumAPI.IsAvailable();
+            var isAvailable = _purgomalumServiceStatus.IsAvailable();
 
             Assert.True(isAvailable);
         }
