@@ -14,11 +14,14 @@ namespace API.Wrapper
 
         public bool IsAvailable()
         {
+            _log.Info("Checking service is available");
+
             _request = new RestRequest
             {
                 Method = Method.HEAD
             };
-            return _client.Execute(_request).IsSuccessful;
+
+            return _client.Execute(_request).IsSuccessful);
         }
     }
 }
