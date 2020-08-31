@@ -9,7 +9,8 @@ namespace Purgomalum.Service
         private readonly Logger _log;
         private readonly PurgomalumSettings _purgomalumSettings;
 
-        public PurgomalumServiceBase(PurgomalumSettings purgomalumSettings) : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
+        public PurgomalumServiceBase(PurgomalumSettings purgomalumSettings)
+            : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
         {
             _log = LogManager.GetCurrentClassLogger();
 
@@ -18,7 +19,7 @@ namespace Purgomalum.Service
 
         public void SetTextToBeProcessed(string text)
         {
-            _log.Trace($"Setting text '{text}' to replace profanitys");
+            _log.Trace($"Setting text '{text}' to be processed");
 
             AddQueryStringParam(_purgomalumSettings.TextProcessParam, text);
         }

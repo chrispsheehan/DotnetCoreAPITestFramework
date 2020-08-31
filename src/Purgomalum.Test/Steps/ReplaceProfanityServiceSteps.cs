@@ -1,6 +1,5 @@
 using Purgomalum.Service;
 using TechTalk.SpecFlow;
-using Xunit;
 
 namespace StepDefinitions
 {
@@ -14,7 +13,7 @@ namespace StepDefinitions
             _purgomalumReplaceService = purgomalumReplaceService;
         }
 
-        [When(@"I replace profanitys in the content")] 
+        [When(@"I replace profanitys in the content")]
         public void WhenIReplaceProfanitysInTheContent()
         {
             _purgomalumReplaceService.ProcessText();

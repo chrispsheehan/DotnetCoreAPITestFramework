@@ -7,7 +7,6 @@ namespace Hooks
     [Binding]
     public class LogHook
     {
-
         [BeforeTestRun]
         public static void BeforeTestRun(IObjectContainer objectContainer)
         {
