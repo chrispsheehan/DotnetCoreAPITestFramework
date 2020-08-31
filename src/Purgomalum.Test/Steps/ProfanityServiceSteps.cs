@@ -14,14 +14,6 @@ namespace StepDefinitions
             _purgomalumAPI = purgomalumAPI;
         }
 
-        [Given(@"The profanity removing API is available")]
-        public void GivenTheProfanityRemovingAPIIsAvailable()
-        {
-            var isAvailable = _purgomalumAPI.IsAvailable();
-
-            Assert.True(isAvailable);
-        }
-
         [Given(@"I am using the profanity replacement service")]
         public void GivenIAmUsingTheProfanityReplacementService()
         {
