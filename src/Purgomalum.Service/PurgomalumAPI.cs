@@ -4,7 +4,7 @@ using Purgomulum.Settings;
 
 namespace Purgomalum.Service
 {
-    public class PurgomalumAPI : APIBase
+    public class PurgomalumAPI : APIExecute
     {
         private readonly Logger _log;
         private readonly PurgomalumSettings _purgomalumSettings;
