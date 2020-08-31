@@ -23,7 +23,6 @@ namespace StepDefinitions
         [Then(@"no profanitys are found")]
         public void ThenNoProfanitysAreFound()
         {
-
             Assert.False(_profanitysFound);
         }
     }
