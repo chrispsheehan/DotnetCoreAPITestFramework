@@ -20,8 +20,6 @@ namespace Purgomalum.Service
         {
             _log.Trace("Replacing profanitys...");
 
-            _purgomalumAPI.SetTextToBeProcessed(text);
-
             _purgomalResponse = _purgomalumAPI.ExecuteReturnType<ProcessedResponse>();
         }
 

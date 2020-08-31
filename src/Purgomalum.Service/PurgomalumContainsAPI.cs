@@ -19,8 +19,6 @@ namespace Purgomalum.Service
         {
             _log.Trace("Checking if text contains profanity");
 
-            _purgomalumAPI.SetTextToBeProcessed(text);
-
             _purgomalResponse = _purgomalumAPI.ExecuteReturnContent();
         }
 
