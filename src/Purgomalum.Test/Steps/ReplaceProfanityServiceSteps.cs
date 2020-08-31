@@ -5,37 +5,37 @@ using Xunit;
 namespace StepDefinitions
 {
     [Binding]
-    public class ProfanityServiceSteps
+    public class ReplaceProfanityServiceSteps
     {
-        private readonly PurgomalumAPI _purgomalumAPI;
+        private readonly PurgomalumReplaceService _purgomalumReplaceService;
 
-        public ProfanityServiceSteps(PurgomalumAPI purgomalumAPI)
+        public ReplaceProfanityServiceSteps(PurgomalumReplaceService purgomalumReplaceService)
         {
-            _purgomalumAPI = purgomalumAPI;
+            _purgomalumReplaceService = purgomalumReplaceService;
+        }
+
+        [When(@"I replace profanitys in the content")] 
+        public void WhenIReplaceProfanitysInTheContent()
+        {
+            _purgomalumReplaceService.ProcessText();
         }
 
         [Given(@"I am using the profanity replacement service")]
         public void GivenIAmUsingTheProfanityReplacementService()
         {
-            _purgomalumAPI.SetDefaultService();
+            _purgomalumReplaceService.SetDefaultService();
         }
 
         [Given(@"I am using the profanity character replacement service with (.*)")]
         public void GivenIAmUsingTheProfanityCharacterReplacementServiceWith(string replacementCharacter)
         {
-            _purgomalumAPI.SetCharacterReplacementService(replacementCharacter);
+            _purgomalumReplaceService.SetCharacterReplacementService(replacementCharacter);
         }
 
         [Given(@"I am using the profanity string replacement service with (.*)")]
         public void GivenIAmUsingTheProfanityStringReplacementServiceWith(string replacementString)
         {
-            _purgomalumAPI.SetStringReplacementService(replacementString);
-        }
-
-        [Given(@"I am using the contains profanity service")]
-        public void GivenIAmUsingTheContainsProfanityService()
-        {
-            _purgomalumAPI.SetContainsService();
+            _purgomalumReplaceService.SetStringReplacementService(replacementString);
         }
     }
 }

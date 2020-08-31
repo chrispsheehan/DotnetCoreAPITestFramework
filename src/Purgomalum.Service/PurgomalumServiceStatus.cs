@@ -8,7 +8,8 @@ namespace Purgomalum.Service
     {
         private readonly Logger _log;
 
-        public PurgomalumServiceStatus(PurgomalumSettings purgomalumSettings) : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
+        public PurgomalumServiceStatus(PurgomalumSettings purgomalumSettings) 
+            : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
         {
             _log = LogManager.GetCurrentClassLogger();
         }

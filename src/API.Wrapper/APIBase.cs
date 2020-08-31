@@ -34,14 +34,45 @@ namespace API.Wrapper
             };
         }
 
+        public void AddQueryStringParam(string paramName, string paramValue)
+        {
+            _request.Parameters.Add(new Parameter(paramName, paramValue, ParameterType.QueryString));
+        }
+
         public void SetHeaderToPlainText()
         {
             _request.AddHeader("Accept", "text/plain");
         }
 
-        public void AddQueryStringParam(string paramName, string paramValue)
+        public string ExecuteReturnContent()
         {
-            _request.Parameters.Add(new Parameter(paramName, paramValue, ParameterType.QueryString));
-        }
+            var response = _client.Execute(_request);
+
+            if(string.IsNullOrEmpty(response.Content))
+            {
+                const string errorMsg = "No content found in reponse";
+
+                _log.Error(errorMsg);
+
+                throw new Exception(errorMsg);
+            }
+
+            return response.Content;
+        } 
+
+        public T ExecuteReturnType<T>() where T : new()
+        {
+            var response = _client.Execute<T>(_request);
+
+            if (response.ErrorException != null)
+            {
+                const string errorMsg = "Error retrieving response.  Check inner details for more info.";
+
+                _log.Error($"{errorMsg} {response.ErrorException}");
+
+                throw new Exception(errorMsg, response.ErrorException);
+            }
+            return response.Data;
+        }        
     }
 }

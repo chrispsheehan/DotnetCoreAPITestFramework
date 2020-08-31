@@ -8,19 +8,19 @@ namespace StepDefinitions
     public class ReceivedMessageSteps
     {
         private readonly Message _message;
-        private readonly PurgomalumAPI _purgomalumAPI;
+        private readonly PurgomalumServiceBase _purgomalumServiceBase;
 
-        public ReceivedMessageSteps(Message message, PurgomalumAPI purgomalumAPI)
+        public ReceivedMessageSteps(Message message, PurgomalumServiceBase purgomalumServiceBase)
         {
            _message = message;
 
-           _purgomalumAPI = purgomalumAPI;
+           _purgomalumServiceBase = purgomalumServiceBase;
         }
 
         [When(@"I receive an incomming text of (.*)")]
         public void WhenIReceiveAnIncommingTextOf(string text)
         {
-            _purgomalumAPI.SetTextToBeProcessed(text);
+            _purgomalumServiceBase.SetTextToBeProcessed(text);
 
             _message.Text = text;
         }

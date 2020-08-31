@@ -7,27 +7,24 @@ namespace StepDefinitions
     [Binding]
     public class AssertContainsProfanitySteps
     {
-        private readonly PurgomalumContainsAPI _purgomalumContainsAPI;
+        private readonly bool _profanitysFound;
 
-        public AssertContainsProfanitySteps(PurgomalumContainsAPI purgomalumContainsAPI)
+        public AssertContainsProfanitySteps(PurgomalumContainsService purgomalumContainsService)
         {
-            _purgomalumContainsAPI = purgomalumContainsAPI;
+            _profanitysFound = purgomalumContainsService.GetContainsBool();
         }
 
         [Then(@"profanitys are found")]
         public void ThenProfanitysAreFound()
         {
-            bool actual = _purgomalumContainsAPI.GetContainsBool();
-
-            Assert.True(actual);
+            Assert.True(_profanitysFound);
         }
 
         [Then(@"no profanitys are found")]
         public void ThenNoProfanitysAreFound()
         {
-            bool actual = _purgomalumContainsAPI.GetContainsBool();;
 
-            Assert.False(actual);
+            Assert.False(_profanitysFound);
         }
     }
 }
