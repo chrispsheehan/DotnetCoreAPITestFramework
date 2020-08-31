@@ -39,9 +39,9 @@ namespace API.Wrapper
             _request.Parameters.Add(new Parameter(paramName, paramValue, ParameterType.QueryString));
         }
 
-        public void SetHeaderToPlainText()
+        public void SetDataTypeHeader(string dataType)
         {
-            _request.AddHeader("Accept", "text/plain");
+            _request.AddHeader("Accept", dataType);
         }
 
         public string ExecuteReturnContent()

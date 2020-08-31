@@ -26,7 +26,7 @@ namespace Purgomalum.Service
 
             _purgomalumServiceBase.SetService(_purgomalumSettings.ContainsProfanityService);
 
-            _purgomalumServiceBase.SetHeaderToPlainText();
+            _purgomalumServiceBase.SetDataTypeHeader("text/plain");
         }
 
         public void ProcessText()
