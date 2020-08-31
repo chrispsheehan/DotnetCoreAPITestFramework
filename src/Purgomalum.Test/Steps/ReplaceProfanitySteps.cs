@@ -17,8 +17,8 @@ namespace StepDefinitions
             _purgomalumReplaceAPI = purgomalumReplaceAPI;
         }
 
-        [When(@"I process the content")] 
-        public void WhenIProcessTheContent()
+        [When(@"I replace profanitys in the content")] 
+        public void WhenIReplaceProfanitysInTheContent()
         {
             _purgomalumReplaceAPI.ProcessText( _message.Text);
         }
