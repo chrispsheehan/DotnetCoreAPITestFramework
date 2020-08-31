@@ -5,12 +5,12 @@ using Purgomalum.Service;
 namespace StepDefinitions
 {
     [Binding]
-    public class MessageSteps
+    public class ReceivedMessageSteps
     {
         private readonly Message _message;
         private readonly PurgomalumAPI _purgomalumAPI;
 
-        public MessageSteps(Message message, PurgomalumAPI purgomalumAPI)
+        public ReceivedMessageSteps(Message message, PurgomalumAPI purgomalumAPI)
         {
            _message = message;
 

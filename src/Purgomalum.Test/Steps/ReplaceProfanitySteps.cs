@@ -20,7 +20,7 @@ namespace StepDefinitions
         [When(@"I replace profanitys in the content")] 
         public void WhenIReplaceProfanitysInTheContent()
         {
-            _purgomalumReplaceAPI.ProcessText( _message.Text);
+            _purgomalumReplaceAPI.ProcessText(_message.Text);
         }
     }
 }
