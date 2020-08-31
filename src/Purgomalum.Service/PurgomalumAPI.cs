@@ -9,9 +9,9 @@ namespace Purgomalum.Service
         private readonly Logger _log;
         private readonly PurgomalumSettings _purgomalumSettings;
 
-        public PurgomalumAPI(Logger log, PurgomalumSettings purgomalumSettings) : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
+        public PurgomalumAPI(PurgomalumSettings purgomalumSettings) : base(purgomalumSettings.BaseUrl, purgomalumSettings.Endpoint)
         {
-            _log = log;
+            _log = LogManager.GetCurrentClassLogger();
 
             _purgomalumSettings = purgomalumSettings;
 

@@ -9,9 +9,9 @@ namespace Purgomalum.Service
         private readonly Logger _log;
         private readonly PurgomalumAPI _purgomalumAPI;
 
-        public PurgomalumReplaceAPI(Logger log, PurgomalumAPI purgomalumAPI)
+        public PurgomalumReplaceAPI(PurgomalumAPI purgomalumAPI)
         {
-            _log = log;
+            _log = LogManager.GetCurrentClassLogger();
 
             _purgomalumAPI = purgomalumAPI;
         }
