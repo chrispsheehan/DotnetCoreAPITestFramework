@@ -55,7 +55,7 @@ Total tests: 16
  Total time: 4.1265 Seconds
  ```
 
-#### [Visual Studio Code](https://code.visualstudio.com/)
+### [Visual Studio Code](https://code.visualstudio.com/)
 
 Dotnet core tests can be debugged and run from VS code.
 
