@@ -65,7 +65,7 @@ Required extensions:
 - [Cucumber (Gherkin) Full Support](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
 - [Specflow Tools](https://marketplace.visualstudio.com/items?itemName=amillard98.specflow-tools)
 
-Include the below setting in .vscode/settinigs.json
+Include the below setting in .vscode/settings.json
 ```
 "dotnet-test-explorer.testProjectPath" : "./src"
  ```
