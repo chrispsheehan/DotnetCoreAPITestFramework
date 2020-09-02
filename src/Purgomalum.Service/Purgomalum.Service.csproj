@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.Wrapper\API.Wrapper.csproj" />
+    <ProjectReference Include="..\Purgomalum.Settings\Purgomalum.Settings.csproj" />
+    <PackageReference Include="nlog" Version="4.7.4" />          
+  </ItemGroup>
+
+</Project>

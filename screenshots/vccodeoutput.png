@@ -55,9 +55,9 @@ Total tests: 16
  Total time: 4.1265 Seconds
  ```
 
-### [Visual Studio Code](https://code.visualstudio.com/)
+#### [Visual Studio Code](https://code.visualstudio.com/)
 
-Dotnet core tests can be debugged and run from VS code.
+Dotnet core test can be debugged and run from VS code.
 
 Required extensions:
 - [.Net Core Test Explorer](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer)
@@ -69,7 +69,6 @@ Include the below setting in .vscode/settings.json
 ```
 "dotnet-test-explorer.testProjectPath" : "./src"
  ```
-
 
 ### Troubleshooting
 

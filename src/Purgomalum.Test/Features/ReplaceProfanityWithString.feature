@@ -11,7 +11,7 @@ Background:
 Scenario Outline: No_Profanity_Replaced_With_String
     Given I am using the profanity string replacement service with <replacementString>
     When I receive an incomming text of <text>
-    And I process the content
+    And I replace profanitys in the content
     Then the <text> remains unchanged
 
 Examples:
@@ -23,7 +23,7 @@ Examples:
 Scenario Outline: Profanity_Replaced_With_String
     Given I am using the profanity string replacement service with <replacementString>
 	When I receive an incomming text of <text>
-    And I process the content
+    And I replace profanitys in the content
     Then the string of <replacementString> is added
 
 Examples:
