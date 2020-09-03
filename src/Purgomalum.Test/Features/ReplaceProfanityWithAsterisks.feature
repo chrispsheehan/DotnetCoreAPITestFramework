@@ -15,9 +15,9 @@ Scenario Outline: No_Profanity_Removed
     Then no asterisks are added 
 
 Examples:
-| text          |
-| hallow        |     
-| hallow you    | 
+| text              |
+| hello, you mother |     
+| you are a ferret  | 
 
 
 Scenario Outline: Profanity_Removed
@@ -26,6 +26,6 @@ Scenario Outline: Profanity_Removed
     Then replaced with the corresponding amount of asterisks
 
 Examples:
-| text      |
-| fuck      |  
-| fuck off  | 
+| text              | 
+| go to scunthorpe  | 
+| you're an ass     | 
