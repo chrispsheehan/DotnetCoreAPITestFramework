@@ -15,9 +15,9 @@ Scenario Outline: No_Profanity_Found
     Then no profanitys are found
 
 Examples:
-| text          |
-| hallow        |     
-| hallow you    | 
+| text              |
+| hello, you mother |     
+| you are a ferret  | 
 
 
 Scenario Outline: Profanity_Found
@@ -26,6 +26,6 @@ Scenario Outline: Profanity_Found
     Then profanitys are found
 
 Examples:
-| text      |
-| fuck      |  
-| fuck off  | 
+| text              | 
+| go to scunthorpe  | 
+| you're an ass     | 

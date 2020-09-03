@@ -16,8 +16,8 @@ Scenario Outline: No_Profanity_Replaced_With_String
 
 Examples:
     | replacementString     | text              |
-    | lovelyness            | you're nice       |  
-    | warm hugs             | badger mushroom   |
+    | lovelyness            | hello, you mother |  
+    | warm hugs             | you are a ferret  |
 
 
 Scenario Outline: Profanity_Replaced_With_String
@@ -27,6 +27,6 @@ Scenario Outline: Profanity_Replaced_With_String
     Then the string of <replacementString> is added
 
 Examples:
-    | replacementString     | text        |
-    | flowers               | fuck off    |
-    | chocolates            | badger twat |
+    | replacementString     | text              |
+    | flowers               | you're an ass     |
+    | chocolates            | go to scunthorpe  |

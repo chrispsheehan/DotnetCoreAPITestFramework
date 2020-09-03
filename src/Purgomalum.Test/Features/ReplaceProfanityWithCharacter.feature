@@ -16,8 +16,8 @@ Scenario Outline: No_Profanity_Replaced_With_Character
 
 Examples:
     | replacementCharacter  | text              |
-    | _                     | you're nice       | 
-    | ~                     | badger mushroom   |
+    | _                     | hello, you mother | 
+    | ~                     | you are a ferret  |
 
 
 Scenario Outline: Profanity_Replaced_With_Character
@@ -27,6 +27,6 @@ Scenario Outline: Profanity_Replaced_With_Character
     Then replaced profanity with the corresponding amount of <replacementCharacter>    
 
 Examples:
-    | replacementCharacter  | text        |
-    | -                     | fuck off    |
-    | =                     | badger twat |
+    | replacementCharacter  | text              |
+    | -                     | you're an ass     |
+    | =                     | go to scunthorpe  |
