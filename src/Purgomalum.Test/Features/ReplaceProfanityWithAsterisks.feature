@@ -9,6 +9,7 @@ Background:
     And I am using the profanity replacement service
 
 
+@notsweary
 Scenario Outline: No_Profanity_Removed
 	When I receive an incomming text of <text>
     And I replace profanitys in the content
@@ -20,6 +21,7 @@ Examples:
 | you are a ferret  | 
 
 
+@sweary
 Scenario Outline: Profanity_Removed
 	When I receive an incomming text of <text>
     And I replace profanitys in the content

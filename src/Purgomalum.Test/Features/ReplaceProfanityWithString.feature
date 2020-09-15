@@ -8,6 +8,7 @@ Background:
     Given The profanity removing API is available
 
 
+@notsweary
 Scenario Outline: No_Profanity_Replaced_With_String
     Given I am using the profanity string replacement service with <replacementString>
     When I receive an incomming text of <text>
@@ -20,6 +21,7 @@ Examples:
     | warm hugs             | you are a ferret  |
 
 
+@sweary
 Scenario Outline: Profanity_Replaced_With_String
     Given I am using the profanity string replacement service with <replacementString>
 	When I receive an incomming text of <text>
