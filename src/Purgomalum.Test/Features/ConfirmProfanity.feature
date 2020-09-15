@@ -9,6 +9,7 @@ Background:
     And I am using the contains profanity service
 
 
+@notsweary
 Scenario Outline: No_Profanity_Found
 	When I receive an incomming text of <text>
     And I check the content for profanitys
@@ -20,6 +21,7 @@ Examples:
 | you are a ferret  | 
 
 
+@sweary
 Scenario Outline: Profanity_Found
 	When I receive an incomming text of <text>
     And I check the content for profanitys
