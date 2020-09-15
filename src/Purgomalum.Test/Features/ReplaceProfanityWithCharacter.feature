@@ -8,6 +8,7 @@ Background:
     Given The profanity removing API is available
 
 
+@notsweary
 Scenario Outline: No_Profanity_Replaced_With_Character
     Given I am using the profanity character replacement service with <replacementCharacter>
 	When I receive an incomming text of <text>
@@ -20,6 +21,7 @@ Examples:
     | ~                     | you are a ferret  |
 
 
+@sweary
 Scenario Outline: Profanity_Replaced_With_Character
     Given I am using the profanity character replacement service with <replacementCharacter>
 	When I receive an incomming text of <text>
