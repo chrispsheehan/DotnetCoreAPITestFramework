@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 
-namespace Purgomulum.Settings
+namespace Framework.Settings
 {
-    public static class PurgomalumConfiguation
+    public static class SettingsConfiguation
     {
         public static T GetSettings<T>(string settingsFileName)
         {
