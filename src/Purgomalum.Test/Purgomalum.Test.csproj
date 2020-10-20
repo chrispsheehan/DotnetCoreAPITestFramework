@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="./*.Test.Settings.json"> 
+    <Content Include="./*.TestSettings.json"> 
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>    
     <ProjectReference Include="..\Framework.Settings\Framework.Settings.csproj" />
