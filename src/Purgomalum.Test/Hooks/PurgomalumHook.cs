@@ -3,7 +3,7 @@ using BoDi;
 using Purgomalum.Service.Object;
 using Framework.Settings;
 
-namespace Hooks
+namespace Purgomalum.Test.Hooks
 {
     [Binding]
     public static class PurgomalumHook
