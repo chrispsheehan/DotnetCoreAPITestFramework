@@ -1,6 +1,6 @@
 using TechTalk.SpecFlow;
-using Object;
 using Purgomalum.Service;
+using Purgomulum.Service.Object;
 
 namespace StepDefinitions
 {
