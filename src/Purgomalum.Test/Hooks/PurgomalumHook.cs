@@ -11,7 +11,7 @@ namespace Hooks
         [BeforeTestRun]
         public static void BeforeTestRun(IObjectContainer objectContainer)
         {
-            objectContainer.RegisterInstanceAs(SettingsConfiguation.GetSettings<PurgomalumSettings>("PurgomalumSettings.json"));
+            objectContainer.RegisterInstanceAs(SettingsConfiguation.Build<PurgomalumSettings>("PurgomalumSettings.json"));
         }
     }
 }

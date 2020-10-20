@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 
@@ -6,7 +5,7 @@ namespace Framework.Settings
 {
     public static class SettingsConfiguation
     {
-        public static T GetSettings<T>(string settingsFileName)
+        public static T Build<T>(string settingsFileName)
         {
             return BuildConfig(settingsFileName).Get<T>();
         }
@@ -16,6 +15,7 @@ namespace Framework.Settings
             return new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(settingsFileName)
+                .AddEnvironmentVariables()                
                 .Build();
         }
     }
