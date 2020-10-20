@@ -1,5 +1,5 @@
 using API.Wrapper;
-using Purgomulum.Settings;
+using Purgomalum.Service.Object;
 
 namespace Purgomalum.Service
 {

@@ -1,6 +1,6 @@
 using API.Wrapper;
 using NLog;
-using Purgomulum.Settings;
+using Purgomalum.Service.Object;
 
 namespace Purgomalum.Service
 {

@@ -24,7 +24,7 @@ This is a test automation framework written against it.
 #### Run the tests on your machine OR...
 
 ```
-cd src
+cd src/Purgomalum.Test
 dotnet test
 ```
 

@@ -1,16 +1,25 @@
 using TechTalk.SpecFlow;
 using BoDi;
-using Purgomulum.Settings;
+using Purgomalum.Service.Object;
+using Framework.Settings;
 
-namespace Hooks
+namespace Purgomalum.Test.Hooks
 {
     [Binding]
     public static class PurgomalumHook
     {
+        public static PurgomalumSettings AppSettings;
+
         [BeforeTestRun]
-        public static void BeforeTestRun(IObjectContainer objectContainer)
+        public static void BeforeTestRun()
         {
-            objectContainer.RegisterInstanceAs(PurgomalumConfiguation.GetSettings());
+            AppSettings = SettingsConfiguation.Build<PurgomalumSettings>();
+        }
+
+        [BeforeFeature]
+        public static void BeforeFeature(IObjectContainer objectContainer)
+        {
+            objectContainer.RegisterInstanceAs(AppSettings);
         }
     }
 }

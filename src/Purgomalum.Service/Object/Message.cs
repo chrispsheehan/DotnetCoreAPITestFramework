@@ -1,4 +1,4 @@
-namespace Object
+namespace Purgomulum.Service.Object
 {
     public class Message
     {
