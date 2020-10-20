@@ -8,10 +8,18 @@ namespace Purgomalum.Test.Hooks
     [Binding]
     public static class PurgomalumHook
     {
+        public static PurgomalumSettings AppSettings;
+
         [BeforeTestRun]
-        public static void BeforeTestRun(IObjectContainer objectContainer)
+        public static void BeforeTestRun()
         {
-            objectContainer.RegisterInstanceAs(SettingsConfiguation.Build<PurgomalumSettings>());
+            AppSettings = SettingsConfiguation.Build<PurgomalumSettings>();
+        }
+
+        [BeforeFeature]
+        public static void BeforeFeature(IObjectContainer objectContainer)
+        {
+            objectContainer.RegisterInstanceAs(AppSettings);
         }
     }
 }
