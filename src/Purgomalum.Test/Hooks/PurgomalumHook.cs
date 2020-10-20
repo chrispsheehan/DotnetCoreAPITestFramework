@@ -1,6 +1,7 @@
 using TechTalk.SpecFlow;
 using BoDi;
 using Purgomulum.Settings;
+using Purgomalum.Service.Object;
 
 namespace Hooks
 {
@@ -10,7 +11,7 @@ namespace Hooks
         [BeforeTestRun]
         public static void BeforeTestRun(IObjectContainer objectContainer)
         {
-            objectContainer.RegisterInstanceAs(PurgomalumConfiguation.GetSettings());
+            objectContainer.RegisterInstanceAs(PurgomalumConfiguation.GetSettings<PurgomalumSettings>("PurgomalumSettings.json"));
         }
     }
 }

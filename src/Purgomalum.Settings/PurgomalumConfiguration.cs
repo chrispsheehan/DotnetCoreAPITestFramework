@@ -6,41 +6,17 @@ namespace Purgomulum.Settings
 {
     public static class PurgomalumConfiguation
     {
-        private const string SettingsFile = "PurgomalumSettings.json";
-
-        public static PurgomalumSettings GetSettings()
+        public static T GetSettings<T>(string settingsFileName)
         {
-            var configRoot = BuildConfig();
-
-            return new PurgomalumSettings
-            {
-                BaseUrl = configRoot.GetAppSetting("BaseUrl"),
-                Endpoint = configRoot.GetAppSetting("Endpoint"),
-                TextProcessParam = configRoot.GetAppSetting("TextProcessParam"),
-                ContainsProfanityService  = configRoot.GetAppSetting("ContainsProfanityService"),
-                ReplaceCharacterService = configRoot.GetAppSetting("ReplaceCharacterService"),
-                ReplaceStringService = configRoot.GetAppSetting("ReplaceStringService"),
-                DefaultDataType = configRoot.GetAppSetting("DefaultDataType")
-            };
+            return BuildConfig(settingsFileName).Get<T>();
         }
 
-        private static IConfigurationRoot BuildConfig()
+        private static IConfigurationRoot BuildConfig(string settingsFileName)
         {
             return new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(SettingsFile)
+                .AddJsonFile(settingsFileName)
                 .Build();
-        }
-
-        private static string GetAppSetting(this IConfigurationRoot config, string settingName)
-        {
-            string content = config[settingName];
-
-            if (!string.IsNullOrEmpty(content))
-            {
-                return content;
-            }
-            throw new InvalidOperationException($"Could not read app setting for {settingName}");
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace Purgomulum.Settings
+namespace Purgomalum.Service.Object
 {
     public class PurgomalumSettings
     {
