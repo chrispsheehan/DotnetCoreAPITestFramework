@@ -42,7 +42,7 @@ docker run --rm test-complied-box:1.0
 Run code from a volume - used in debug.
 
 ```bash
-docker run -v ${PWD}/src:/src --entrypoint="dotnet" -it mcr.microsoft.com/dotnet/core/sdk:3.1 test /src
+docker run --rm -v ${PWD}/src:/src --entrypoint="dotnet" -it mcr.microsoft.com/dotnet/core/sdk:3.1 test /src --filter Category=sweary
 ```
 
 #### [To run with filters]("https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests")
