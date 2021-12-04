@@ -32,9 +32,17 @@ dotnet test
 
 #### ...in [Docker](https://www.docker.com/)
 
+Create image containing compiled test code and run it.
+
 ```bash
-docker build -t test-box .
-docker run -it test-box
+docker build -t test-complied-box:1.0 .
+docker run --rm test-complied-box:1.0
+```
+
+Run code from a volume - used in debug.
+
+```bash
+docker run -v ${PWD}/src:/src --entrypoint="dotnet" -it mcr.microsoft.com/dotnet/core/sdk:3.1 test /src
 ```
 
 #### [To run with filters]("https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests")
