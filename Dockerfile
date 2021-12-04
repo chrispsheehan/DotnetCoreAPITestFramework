@@ -6,4 +6,4 @@ WORKDIR /src
 
 RUN dotnet build
 
-CMD dotnet test
+ENTRYPOINT [ "dotnet", "test" ]
