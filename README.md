@@ -106,3 +106,10 @@ error MSB4018: The "GenerateFeatureFileCodeBehindTask" task failed unexpectedly.
  ```bash
 export MSBUILDSINGLELOADCONTEXT=1
  ```
+
+- Issue: cannot install dotnet executable on M1 machine
+- Fix:
+
+ ```bash
+sudo ln -s /usr/local/share/dotnet/x64/dotnet /usr/local/bin
+ ```
