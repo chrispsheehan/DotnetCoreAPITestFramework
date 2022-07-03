@@ -23,7 +23,7 @@
     <Content Include="../xunit.runner.json"> 
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content> 
-    <Content Include="../specflow.json"> 
+    <Content Include="../Specflow.json"> 
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content> 
     <Content Include="./*.TestSettings.json"> 
