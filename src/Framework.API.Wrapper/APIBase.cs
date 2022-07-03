@@ -36,7 +36,7 @@ namespace API.Wrapper
 
         public void AddQueryStringParam(string paramName, string paramValue)
         {
-            _request.Parameters.Add(new Parameter(paramName, paramValue, ParameterType.QueryString));
+            _request.AddParameter(paramName, paramValue, ParameterType.QueryString);
         }
 
         public void SetDataTypeHeader(string dataType)
